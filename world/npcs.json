@@ -1,0 +1,44 @@
+[
+  {
+    "id": "professor",
+    "name": "Professor Rowan",
+    "x": 0, "y": -3, "facing": "down",
+    "look": { "body": "#f4f4f4", "pants": "#5b4a3a", "hair": "#b8b8b8" },
+    "dialogue": ["The tall grass east of town is full of wild creatures."]
+  },
+  {
+    "id": "nurse",
+    "name": "Nurse Ivy",
+    "x": 5, "y": 1, "facing": "down",
+    "look": { "body": "#ff9fb8", "pants": "#ffffff", "hair": "#d4513b", "hat": "#ffffff" },
+    "dialogue": ["Bring your team to me whenever they need rest."]
+  },
+  {
+    "id": "rival",
+    "name": "Kai",
+    "x": 10, "y": 2, "facing": "left",
+    "look": { "body": "#3f7cd9", "pants": "#1f2a44", "hair": "#1b1b1b", "hat": "#2e3a59" },
+    "dialogue": ["Go get your first creature already. Then we'll see who's better!"]
+  },
+  {
+    "id": "kid",
+    "name": "Little Tom",
+    "x": -3, "y": 4, "wander": true,
+    "look": { "body": "#f2c94c", "pants": "#3b6b3b", "hair": "#6b3d1f" },
+    "dialogue": ["Did you know you can build in this world? Press B!", "I put a sign up once. Everyone read it!"]
+  },
+  {
+    "id": "gran",
+    "name": "Granny Moss",
+    "x": -7, "y": 2, "wander": true,
+    "look": { "body": "#7d5ba6", "pants": "#4a3b5c", "hair": "#e6e6e6" },
+    "dialogue": ["Every evening the lamps light themselves. Pretty, isn't it?", "Harbor Rest is to the south-east. Follow the path."]
+  },
+  {
+    "id": "fisher",
+    "name": "Fisher Mila",
+    "x": 64, "y": 34, "facing": "down",
+    "look": { "body": "#2f8f83", "pants": "#3a3a3a", "hair": "#c27a3a", "hat": "#f2c94c" },
+    "dialogue": ["The fish are biting today."]
+  }
+]

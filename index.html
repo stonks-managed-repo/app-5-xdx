@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>xdx</title>
+  <meta name="description" content="Explore an endless world, befriend creatures, and build it together.">
+  <!-- x-game -->
+  <!-- x-game: an X (Twitter) player card — a post linking this site shows the game itself,
+       playable right in the timeline (X embeds twitter:player as a 480×480 iframe). -->
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:title" content="xdx">
+  <meta name="twitter:description" content="Explore an endless world, befriend creatures, and build it together.">
+  <meta name="twitter:image" content="https://xdx.idea.stonkslabs.com/assets/card.jpg">
+  <meta name="twitter:player" content="https://xdx.idea.stonkslabs.com/?x-game">
+  <meta name="twitter:player:width" content="480">
+  <meta name="twitter:player:height" content="480">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="xdx">
+  <meta property="og:description" content="Explore an endless world, befriend creatures, and build it together.">
+  <meta property="og:image" content="https://xdx.idea.stonkslabs.com/assets/card.jpg">
+  <meta property="og:url" content="https://xdx.idea.stonkslabs.com/">
+  <!-- /x-game -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div class="vignette"></div>
+
+  <div id="loading">Loading world…</div>
+
+  <header class="hud">
+    <div class="hud-place">
+      <span id="hud-place">…</span>
+      <small><span id="hud-clock">--:--</span> · <span id="hud-coords">0, 0</span></small>
+    </div>
+    <nav class="hud-buttons">
+      <button id="btn-party" title="Team (P)">🐾<span>Team</span></button>
+      <button id="btn-bag" title="Bag (I)">🎒<span>Bag</span></button>
+      <button id="btn-quests" title="Quests (Q)">📜<span>Quests</span></button>
+      <button id="btn-world" title="Community">🌍<span>World</span></button>
+      <button id="btn-build" class="build" title="Build mode (B)">🛠<span>Build</span></button>
+      <button id="btn-help" title="Help">?</button>
+      <a id="btn-full" class="hud-link" href="./" target="_blank" rel="noopener" title="Open full screen" hidden>⤢</a>
+    </nav>
+  </header>
+
+  <div id="toasts"></div>
+
+  <div id="dialog" hidden>
+    <div id="dialog-name"></div>
+    <p id="dialog-text"></p>
+    <div id="dialog-choices"></div>
+    <span class="dialog-next">▼</span>
+  </div>
+
+  <aside id="editor" hidden></aside>
+  <div id="battle" hidden></div>
+  <div id="modal" hidden></div>
+
+  <div class="touch">
+    <div class="dpad">
+      <button data-dir="up" aria-label="Up">▲</button>
+      <button data-dir="left" aria-label="Left">◀</button>
+      <button data-dir="right" aria-label="Right">▶</button>
+      <button data-dir="down" aria-label="Down">▼</button>
+    </div>
+    <button id="btn-act" class="act" aria-label="Interact">A</button>
+  </div>
+
+  <div id="title-screen" hidden>
+    <div class="title-card">
+      <h1 id="title-name">Iso World</h1>
+      <p id="title-tagline"></p>
+      <input id="title-player" maxlength="16" placeholder="Your name" autocomplete="off">
+      <button id="title-play" class="btn accent big">Play</button>
+      <p class="hint">WASD to walk · E to talk · B to build</p>
+    </div>
+  </div>
+
+  <script type="module" src="engine/main.js"></script>
+</body>
+</html>

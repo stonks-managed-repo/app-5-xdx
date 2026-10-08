@@ -1,0 +1,81 @@
+[
+  {
+    "id": "intro",
+    "title": "A new journey",
+    "trigger": { "type": "start" },
+    "steps": [
+      { "say": ["Welcome to Willow Town, {player}!", "Professor Rowan is waiting for you by the tower to the north."], "who": "Granny Moss" },
+      { "quest": { "id": "starter", "title": "Meet Professor Rowan", "desc": "The professor stands in front of the tower, north of the town square." } }
+    ]
+  },
+  {
+    "id": "choose-starter",
+    "title": "Your first partner",
+    "trigger": { "type": "talk", "npc": "professor" },
+    "requires": { "notFlag": "got_starter" },
+    "once": false,
+    "steps": [
+      { "say": ["Ah, {player}! Right on time.", "The wild is no place to walk alone. Pick a partner."], "who": "Professor Rowan" },
+      { "choice": "Who will join you?", "who": "Professor Rowan", "options": [
+        { "text": "Sproutle — leaf, steady and kind", "goto": "leaf" },
+        { "text": "Embercub — fire, bold and quick", "goto": "fire" },
+        { "text": "Puddlet — water, calm and clever", "goto": "water" }
+      ] },
+      { "label": "leaf" },
+      { "giveCreature": { "id": "sproutle", "level": 5 } },
+      { "goto": "after" },
+      { "label": "fire" },
+      { "giveCreature": { "id": "embercub", "level": 5 } },
+      { "goto": "after" },
+      { "label": "water" },
+      { "giveCreature": { "id": "puddlet", "level": 5 } },
+      { "label": "after" },
+      { "setFlag": "got_starter" },
+      { "give": { "item": "orb", "count": 5 } },
+      { "give": { "item": "potion", "count": 3 } },
+      { "quest": { "id": "starter", "status": "done" } },
+      { "say": ["Weaken wild creatures in the tall grass, then throw an orb to befriend them.", "When you are ready, follow Route 1 east and south to Harbor Rest."], "who": "Professor Rowan" },
+      { "quest": { "id": "harbor", "title": "Reach Harbor Rest", "desc": "Follow the path east out of Willow Town, then south.", "status": "active" } }
+    ]
+  },
+  {
+    "id": "nurse-heal",
+    "title": "Rest",
+    "trigger": { "type": "talk", "npc": "nurse" },
+    "requires": { "party": 1 },
+    "once": false,
+    "steps": [
+      { "say": "Let me look after your team.", "who": "Nurse Ivy" },
+      { "heal": true },
+      { "say": "All better! Come back any time.", "who": "Nurse Ivy" }
+    ]
+  },
+  {
+    "id": "rival-battle",
+    "title": "Kai's challenge",
+    "trigger": { "type": "talk", "npc": "rival" },
+    "requires": [{ "flag": "got_starter" }, { "notFlag": "beat_kai" }],
+    "once": false,
+    "steps": [
+      { "say": "So you got a partner too. Let's battle!", "who": "Kai" },
+      { "battle": { "trainer": "Kai", "team": [{ "creature": "mossnail", "level": 4 }, { "creature": "zapkit", "level": 5 }] } },
+      { "if": { "lastBattle": "win" }, "then": "won" },
+      { "say": "Ha! Train a bit more and come back.", "who": "Kai" },
+      { "end": true },
+      { "label": "won" },
+      { "setFlag": "beat_kai" },
+      { "say": "Not bad… Take these, you earned them.", "who": "Kai" },
+      { "give": { "item": "orb", "count": 3 } }
+    ]
+  },
+  {
+    "id": "reach-harbor",
+    "title": "Harbor Rest",
+    "trigger": { "type": "enter", "x": 64, "y": 30, "radius": 6 },
+    "requires": { "quest": "harbor", "status": "active" },
+    "steps": [
+      { "quest": { "id": "harbor", "status": "done" } },
+      { "say": ["You made it all the way from Willow? Welcome to Harbor Rest!", "Beyond the sea there are lands nobody has built yet. Maybe you will."], "who": "Fisher Mila" }
+    ]
+  }
+]

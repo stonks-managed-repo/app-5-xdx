@@ -1,0 +1,29 @@
+{
+  "engine": "stonks-iso-world",
+  "version": 1,
+  "title": "xdx",
+  "tagline": "Explore an endless world, befriend creatures, and build it together.",
+  "world": "world/world.json",
+  "npcs": "world/npcs.json",
+  "creatures": "world/creatures.json",
+  "scenarios": [
+    "scenarios/main.json"
+  ],
+  "playerLook": {
+    "body": "#e0533d",
+    "pants": "#2f3b5c",
+    "hair": "#3a2418",
+    "hat": "#d94f3d"
+  },
+  "startItems": {
+    "potion": 2
+  },
+  "dayLengthSec": 600,
+  "startTime": 0.33,
+  "encounterRate": 0.09,
+  "viewChunks": 3,
+  "community": {
+    "api": "https://build.stonkslabs.com",
+    "worldId": "2NfJeM0NRYrv"
+  }
+}

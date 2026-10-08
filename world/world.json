@@ -1,0 +1,52 @@
+{
+  "seed": "iso-world",
+  "spawn": { "x": 0, "y": 2 },
+  "places": [
+    {
+      "id": "willow",
+      "name": "Willow Town",
+      "x": 0, "y": 0, "radius": 11,
+      "ground": "grass",
+      "buildings": [
+        { "type": "tower", "x": 0, "y": -6 },
+        { "type": "house", "x": -6, "y": -3 },
+        { "type": "house", "x": 6, "y": -3 },
+        { "type": "house", "x": -6, "y": 5 },
+        { "type": "well", "x": 3, "y": 3 },
+        { "type": "lamp", "x": -2, "y": -2 },
+        { "type": "lamp", "x": 2, "y": -2 },
+        { "type": "lamp", "x": -2, "y": 6 },
+        { "type": "lamp", "x": 2, "y": 6 },
+        { "type": "campfire", "x": 6, "y": 6 },
+        { "type": "crate", "x": 8, "y": -1 },
+        { "type": "fence", "x": 7, "y": 9 },
+        { "type": "fence", "x": 8, "y": 9 },
+        { "type": "fence", "x": 9, "y": 9 }
+      ],
+      "paths": [[0, -4, 0, 11], [-11, 1, 11, 1], [-6, -1, -6, 1], [6, -1, 6, 1], [-6, 3, -6, 1]]
+    },
+    {
+      "id": "harbor",
+      "name": "Harbor Rest",
+      "x": 64, "y": 30, "radius": 9,
+      "ground": "sand",
+      "buildings": [
+        { "type": "house", "x": 60, "y": 26 },
+        { "type": "house", "x": 67, "y": 26 },
+        { "type": "lamp", "x": 63, "y": 31 },
+        { "type": "lamp", "x": 66, "y": 31 },
+        { "type": "crate", "x": 69, "y": 32 },
+        { "type": "crate", "x": 69, "y": 33 }
+      ],
+      "paths": [[56, 30, 72, 30], [64, 29, 64, 38]]
+    }
+  ],
+  "paths": [[11, 1, 40, 1], [40, 1, 40, 30], [40, 30, 56, 30]],
+  "signs": [
+    { "x": 2, "y": 9, "text": "Willow Town — where every journey begins.\nEast: Route 1 to Harbor Rest." },
+    { "x": 12, "y": 0, "text": "Route 1. Tall grass ahead — wild creatures live there!" },
+    { "x": 57, "y": 29, "text": "Harbor Rest. Fresh fish, fresh breeze." }
+  ],
+  "tiles": [],
+  "items": {}
+}
